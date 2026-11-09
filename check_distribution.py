@@ -74,6 +74,6 @@ assert 'operator-owned' in readme and 'not an independent review' in readme
 assert 'does not contain an offline calculator' in readme
 assert 'hosting/security' in readme and 'aggregate counts' in readme
 assert not re.search(r'(?i)(MIT License|open[- ]source|Copyright \(c\)|mailto:)', readme + html)
-assert sorted(p.name for p in ROOT.iterdir() if p.is_file()) == ['.nojekyll', 'README.md', 'check_distribution.py', 'copied-snippet.txt', 'index.html']
+assert sorted(p.name for p in ROOT.iterdir() if p.is_file()) == ['.nojekyll', 'README.md', 'check_distribution.py', 'copied-snippet.txt', 'index.html', 'sitemap.xml']
 assert 'https://kumiromiscythespec.github.io/send-budget-widget/' in html and 'https://kumiromiscythespec.github.io/send-budget-widget/' in readme
-print(json.dumps({'result': 'PASS', 'files': 5, 'scope': 'static HTML/snippet content only; no browser, network, adoption, traffic or revenue verification'}))
+print(json.dumps({'result': 'PASS', 'files': 6, 'scope': 'static HTML/snippet content only; no browser, network, adoption, traffic or revenue verification'}))
