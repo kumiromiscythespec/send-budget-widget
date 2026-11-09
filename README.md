@@ -12,6 +12,8 @@ This repository provides embed instructions and an operator-owned demonstration.
 
 Copy the contents of [copied-snippet.txt](copied-snippet.txt) into an HTML/embed block on a page you control:
 
+On the [demonstration page](https://kumiromiscythespec.github.io/send-budget-widget/), open **View the embed code** to select and copy the same snippet without downloading it.
+
 ```html
 <iframe
   src="https://send-budget-1109.crisp-llama-2628.chatgpt.site/embed/remaining-sends.html"

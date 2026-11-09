@@ -1,5 +1,6 @@
 """Static content contract only: no network, browser, accounts or production writes."""
 from html.parser import HTMLParser
+from html import unescape
 from pathlib import Path
 from urllib.parse import urlsplit, parse_qs
 import json
@@ -52,7 +53,16 @@ for source in (html, snippet):
     assert not any(tag in ('script', 'form', 'input') for tag, attrs in tags)
     assert not any(key.startswith('on') or key.startswith('data-affiliate') for tag, attrs in tags for key in attrs)
     assert not re.search(r'(metrics\.js|link-config|systeme\.io|try\.carrd|document\.cookie|localStorage|sessionStorage)', source)
-    assert source.index('</iframe>') < source.index('utm_source=github')
+    frame_position = next(i for i, (tag, attrs) in enumerate(tags) if tag == 'iframe')
+    link_position = next(i for i, (tag, attrs) in enumerate(tags) if tag == 'a' and 'utm_source=' in attrs.get('href', ''))
+    assert frame_position < link_position
+displayed = re.search(r'<details class="embed-code">([\s\S]*?)</details>', html)
+assert displayed and '<summary>View the embed code</summary>' in displayed.group(1)
+code = re.search(r'<pre\b[^>]*><code>([\s\S]*?)</code></pre>', displayed.group(1))
+assert code and unescape(code.group(1)) == snippet
+assert not any(tag == 'iframe' for tag, attrs in parsed(displayed.group(1)))
+assert html.index('</details>') < html.index('<section class="demo"')
+assert 'overflow-x:auto;white-space:pre' in html and 'max-width:100%' in html
 assert snippet.strip() in readme
 assert '<iframe' not in readme.split('```html')[0]
 assert html.count('<h1>') == 1
