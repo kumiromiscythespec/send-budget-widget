@@ -29,6 +29,20 @@ Preview the published page on desktop and mobile. Adjust the height if needed an
 
 The live widget is hosted by Send Budget. This repository does not contain an offline calculator or a copy of its calculation JavaScript. The standalone widget requires JavaScript and initializes with example counts.
 
+## On a site you already publish with Carrd
+
+Carrd's [custom-code instructions](https://carrd.com/docs/building/embedding-custom-code) require **Pro Standard or higher** for an Embed element. If your current setup cannot embed the widget, publish an ordinary link to the full calculator instead.
+
+1. In Carrd, choose **Add Element → Embed**, then set **Type: Code** and **Style: Inline**.
+2. Paste the complete snippet above, including its fallback link. Keep the frame's scrolling available and adjust its height if your layout needs it.
+3. Preview the **published page** on desktop and mobile. Carrd says custom code does not render inside its builder. Check that the four input labels, result and fallback link remain usable.
+
+For an ordinary link, use `https://send-budget-1109.crisp-llama-2628.chatgpt.site/capacity.html#remaining-send-balance` as a link or button destination in your editor. Readers can use the hosted calculator without installing it. Keep your existing setup when a link is enough.
+
+If you are already evaluating paid Carrd features, [Page Scope's feature and plan guide](https://page-scope-1109.crisp-llama-2628.chatgpt.site/pricing.html) can help distinguish Free, Lite, Standard and Plus requirements. Page Scope is maintained by the same operator and contains disclosed Carrd referral links. This guide is an ordinary link; the widget and snippet contain no affiliate links.
+
+Carrd documentation checked 10 November 2026. These are documented setup steps; this repository's live demo remains the operator-owned GitHub Pages installation.
+
 ## What the worksheet checks
 
 Enter four whole-number counts: the current remaining sends, the next campaign's sendable recipients, the total reserved for all planned resends, and other sends before the same reset. Enter an explicit `0` for none; a blank is unknown. Each input accepts 0–1,000,000,000.
