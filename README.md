@@ -29,6 +29,14 @@ Preview the published page on desktop and mobile. Adjust the height if needed an
 
 The live widget is hosted by Send Budget. This repository does not contain an offline calculator or a copy of its calculation JavaScript. The standalone widget requires JavaScript and initializes with example counts.
 
+## On an existing WordPress site
+
+For a newsletter tutorial, the [campaign-and-resend example](https://send-budget-1109.crisp-llama-2628.chatgpt.site/use-cases.html#campaign-resends) explains the four inputs. Add a Custom HTML block, paste the unchanged snippet, save, and test the published page on desktop and mobile. Keep the ordinary link below the frame.
+
+Self-hosted WordPress can filter iframe markup depending on the publishing role and site policy; see its [official Custom HTML documentation](https://wordpress.org/documentation/article/custom-html/). [WordPress.com](https://wordpress.com/support/wordpress-editor/blocks/custom-html-block/) requires a paid plan with hosting features active for third-party iframes. Use the ordinary calculator link when embedding is unavailable; no widget installation or upgrade is needed for a link.
+
+Documentation checked 10 November 2026. These are documented steps, not a verified WordPress installation. The operator-owned working demonstration remains GitHub Pages.
+
 ## On a site you already publish with Carrd
 
 Carrd's [custom-code instructions](https://carrd.com/docs/building/embedding-custom-code) require **Pro Standard or higher** for an Embed element. If your current setup cannot embed the widget, publish an ordinary link to the full calculator instead.
